@@ -1,29 +1,24 @@
 const todoCard = (title, description, dueDate, priority) => {
+    let done = false;
     return {title, description, dueDate, priority, done};
 };
 
-const projects = () => {
-    let allProjects = [];
+const projects = (() => {
+    let allProjects = {};
 
-    const addProject = (project) => {
-        allProjects.push(project);
-;    }
-
-    const newProject = (name) => {
-        return {
-            name: name,
-            todos: []
-        };
+    const addNewProject = (name) => {
+        allProjects[name] = {
+            todoCards: []
+        }      
     };
 
-    const getProjectIndex = (name) => {
-        return allProjects.findIndex(project => project.name = name);
+    const getProject = (name) => {
+        return allProjects[name];
     }
 
-    const addTodoToProject = (todo, projectName) => {
-        const projectIndex = getProjectIndex(projectName);
-        allProjects[projectIndex].todos.push(todo);
+    const addCardToProject = (todoCard, projectName) => {
+        allProjects[projectName].todoCards.push(todoCard);
     }
 
-    return {newProject, addProject, addTodoToProject};
-};
+    return {addNewProject, addCardToProject, getProject};
+})();
