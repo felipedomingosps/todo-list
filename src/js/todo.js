@@ -20,5 +20,5 @@ const projects = (() => {
         allProjects[projectName].todoCards.push(todoCard);
     }
 
-    return {addNewProject, addCardToProject, getProject};
+    return {newProject, addProject, addTodoToProject};
 })();
