@@ -1,5 +1,5 @@
-const createTodo = (title, description, dueDate, priority) => {
-    return {title, description, dueDate, priority};
+const todoCard = (title, description, dueDate, priority) => {
+    return {title, description, dueDate, priority, done};
 };
 
 const projects = () => {
