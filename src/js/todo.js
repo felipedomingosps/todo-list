@@ -14,11 +14,15 @@ const projects = (() => {
 
     const getProject = (name) => {
         return allProjects[name];
-    }
+    };
 
     const addCardToProject = (todoCard, projectName) => {
         allProjects[projectName].todoCards.push(todoCard);
-    }
+    };
 
-    return {addNewProject, addCardToProject, getProject};
+    const getAllCards = (projectName) => {
+        return allProjects[projectName].todoCards;
+    };
+
+    return {addNewProject, addCardToProject, getProject, getAllCards};
 })();
